@@ -52,6 +52,7 @@ ACTION_FOOD_SELECTED_FROM_RESTAURANTS = "order placed for burger from kfc"
 def get_nearbyresturent():
 	if not request.json:
 		abort(400)
+	print(jsonify(request.json))	
 	originalRequest = request.json.get("originalRequest")
 	source = originalRequest.get("source")
 	if source == "facebook":

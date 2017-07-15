@@ -4,43 +4,45 @@ app = Flask(__name__)
 
 def ResturentListResponse(user_id):
 	return  {
-                "speech": "Barack Hussein Obama II was the 44th and current President of the United States.",
-                "displayText": "Barack Hussein Obama II was the 44th and current President of the United States, and the first African American to hold the office. Born in Honolulu, Hawaii, Obama is a graduate of Columbia University   and Harvard Law School, where ",
-                "data": {
-                  "recipient": {
-                    "id": user_id
-                  },
-                  "message": {
-                    "attachment": {
-                      "type": "template",
-                      "payload": {
-                        "template_type": "generic",
-                        "elements": [
-                          {
-                            "title": "Welcome to Peters Hats",
-                            "image_url": "https://petersfancybrownhats.com/company_image.png",
-                            "subtitle": "We have got the right hat for everyone.",
-                            "buttons": [
-                              {
-                                "type": "web_url",
-                                "url": "https://petersfancybrownhats.com",
-                                "title": "View Website"
-                              },
-                              {
-                                "type": "postback",
-                                "title": "Start Chatting",
-                                "payload": "DEVELOPER_DEFINED_PAYLOAD"
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    }
-                  }
-                },
-                "contextOut": "",
-                "source": "swiggy-bot"
-              }
+             "speech": "Barack Hussein Obama II was the 44th and current President of the United States.",
+             "displayText": "Barack Hussein Obama II was the 44th and current President of the United States, and the first African American to hold the office. Born in Honolulu, Hawaii, Obama is a graduate of Columbia University   and Harvard Law School, where ",
+             "data": {
+               "facebook": {
+                 "recipient": {
+                   "id": "user_id"
+                 },
+                 "message": {
+                   "attachment": {
+                     "type": "template",
+                     "payload": {
+                       "template_type": "generic",
+                       "elements": [
+                         {
+                           "title": "Welcome to Peters Hats",
+                           "image_url": "https://petersfancybrownhats.com/company_image.png",
+                           "subtitle": "We have got the right hat for everyone.",
+                           "buttons": [
+                             {
+                               "type": "web_url",
+                               "url": "https://petersfancybrownhats.com",
+                               "title": "View Website"
+                             },
+                             {
+                               "type": "postback",
+                               "title": "Start Chatting",
+                               "payload": "DEVELOPER_DEFINED_PAYLOAD"
+                             }
+                           ]
+                         }
+                       ]
+                     }
+                   }
+                 }
+               }
+             },
+             "contextOut": "",
+             "source": "swiggy-bot"
+           }
     
 
 

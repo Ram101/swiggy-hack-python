@@ -3,10 +3,12 @@
 # platform: osx-64
 click=6.7=py27_0
 flask=0.12.2=py27_0
+gunicorn=19.1.0=py27_0
 itsdangerous=0.24=py27_0
 jinja2=2.9.6=py27_0
 markupsafe=0.23=py27_2
 openssl=1.0.2l=0
+pastedeploy=1.5.2=py27_1
 pip=9.0.1=py27_1
 python=2.7.13=0
 readline=6.2=2

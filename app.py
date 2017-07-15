@@ -39,7 +39,7 @@ def ResturentListResponse(user_id):
                   }
                 },
                 "contextOut": "",
-                "source": "DuckDuckGo"
+                "source": "swiggy-bot"
               }
     
 

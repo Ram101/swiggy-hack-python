@@ -63,7 +63,7 @@ def get_nearbyresturent():
 		recipient = data.get("recipient")
 		user_id = recipient.get("id")
 		if action == ACTION_GET_RESTAURENTS :
-			return jsonify(ResturentListResponse(user_id)) ,200
+			return jsonify(ResturentListResponse(user_id)) ,200, {'Content-Type': 'application/json'}
 	return 'Sorry please send from a '
 
 			

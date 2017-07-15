@@ -9,7 +9,7 @@ def ResturentListResponse(user_id):
              "data": {
                "facebook": {
                  "recipient": {
-                   "id": "user_id"
+                   "id": user_id
                  },
                  "message": {
                    "attachment": {

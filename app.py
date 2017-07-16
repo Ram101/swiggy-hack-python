@@ -4,11 +4,7 @@ app = Flask(__name__)
 
 def ResturentListResponse(user_id):
 	return  {
-             "speech": "Barack Hussein Obama II was the 44th and current President of the United States.",
-             "displayText": "Barack Hussein Obama II was the 44th and current President of the United States, and the first African American to hold the office. Born in Honolulu, Hawaii, Obama is a graduate of Columbia University   and Harvard Law School, where ",
-             "data": {
-               "facebook": {
-                 "recipient": {
+            "recipient": {
                    "id": user_id
                  },
                  "message": {
@@ -38,14 +34,10 @@ def ResturentListResponse(user_id):
                      }
                    }
                  }
-               }
-             },
-             "contextOut": "",
-             "source": "swiggy-bot"
            }
     
 
-
+PAGE_ACCESS_TOKEN_URL = "https://graph.facebook.com/v2.6/me/messages?access_token=EAABpV7CWY9kBAOilkdMKTAZBtfMTVOxP7VtnLb03WBLgk28unT7cD07eQOPoAGZBAcaFsQPpuDtJurl7CU4gHKKhZAzndSMSRe6SA1V6pKUCZAzawOVWzwhSnk5IUxrZBTjmhC5WFt3ZBcNnx6izZBc6zNGzyZA2vxy2EQmWqPZC9lgZDZD"    
 ACTION_GET_RESTAURENTS = "order.restaurant"
 ACTION_GET_FOOD_FROM_RESTAURANTS = "ordernearme.ordernearme-custom"
 ACTION_FOOD_SELECTED_FROM_RESTAURANTS = "order placed for burger from kfc"
@@ -65,7 +57,8 @@ def get_nearbyresturent():
 		recipient = data.get("recipient")
 		user_id = recipient.get("id")
 		if action == ACTION_GET_RESTAURENTS :
-			return jsonify(ResturentListResponse(user_id)) ,200,{'Authorization': 'Bearer 25e495043f234d37876c5c028587435a'}
+      requests.post(PAGE_ACCESS_TOKEN_URL,jsonify(ResturentListResponse(user_id))
+			return jsonify(ResturentListResponse(user_id)) ,201
 	return 'Sorry please send from a '
 
 			

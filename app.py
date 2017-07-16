@@ -57,7 +57,7 @@ def get_nearbyresturent():
 		recipient = data.get("recipient")
 		user_id = recipient.get("id")
 		if action == ACTION_GET_RESTAURENTS :
-      requests.post(PAGE_ACCESS_TOKEN_URL,jsonify(ResturentListResponse(user_id))
+      requests.post(PAGE_ACCESS_TOKEN_URL,jsonify(ResturentListResponse(user_id)))
 			return jsonify(ResturentListResponse(user_id)) ,201
 	return 'Sorry please send from a '
 

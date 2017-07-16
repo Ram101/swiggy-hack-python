@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+import requests
 
 app = Flask(__name__)
 
@@ -56,9 +57,10 @@ def get_nearbyresturent():
 		data = originalRequest.get("data")
 		recipient = data.get("recipient")
 		user_id = recipient.get("id")
-		if action == ACTION_GET_RESTAURENTS :
-                        requests.post(PAGE_ACCESS_TOKEN_URL,ResturentListResponse(user_id))
-			return jsonify(ResturentListResponse(user_id)) ,201
+		if action == ACTION_GET_RESTAURENTS:
+                  headers = {'Content-type': 'application/json'}
+                  requests.post(PAGE_ACCESS_TOKEN_URL,data=ResturentListResponse(user_id),headers=headers)
+                  return jsonify(ResturentListResponse(user_id)) ,200
 	return 'Sorry please send from a '
 
 			

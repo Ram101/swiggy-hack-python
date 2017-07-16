@@ -55,7 +55,7 @@ def get_nearbyresturent():
 		results = request.json.get("result")
 		action = results.get("action")
 		data = originalRequest.get("data")
-		recipient = data.get("recipient")
+		recipient = data.get("sender")
 		user_id = recipient.get("id")
 		if action == ACTION_GET_RESTAURENTS:
                   headers = {'Content-type': 'application/json'}
